@@ -1,0 +1,6 @@
+@Labb2DotNetMongoAPI_HostAddress = http://localhost:5206
+
+GET {{Labb2DotNetMongoAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
