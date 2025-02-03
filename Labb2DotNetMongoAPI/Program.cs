@@ -35,7 +35,7 @@ namespace Labb2DotNetMongoAPI
             app.UseAuthorization();
 
 
-            //CREATE POKEMON
+            //CREATE PLAYER
             app.MapPost("/player", async (Players newPlayer) =>
             {
                 var player = await db.AddPlayer("Players", newPlayer);
@@ -49,14 +49,14 @@ namespace Labb2DotNetMongoAPI
                 return Results.Ok(pokemons);
             });
 
-            //GET POKEMON BY ID
+            //GET PLAYER BY ID
             app.MapGet("/player/{id}", async (string id) =>
             {
                 var pokemon = await db.GetPlayerById("Players", id);
                 return Results.Ok(pokemon);
             });
 
-            //UPDATE POKEMON
+            //UPDATE PLAYER
             app.MapPut("/player/{id}", async (string id, Players updatedPlayer) =>
             {
                 var player = await db.UpdatePlayerById("Players", id, updatedPlayer);
@@ -71,7 +71,7 @@ namespace Labb2DotNetMongoAPI
                 }
             });
 
-            //DELETE POKEMON
+            //DELETE PLAYER
             app.MapDelete("/player/{id}", async (string id) =>
             {
                 var message = await db.DeletePlayer("Players", id);
