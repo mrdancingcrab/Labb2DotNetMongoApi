@@ -45,15 +45,15 @@ namespace Labb2DotNetMongoAPI
             //GET ALL
             app.MapGet("/players", async () =>
             {
-                var pokemons = await db.GetAllPlayers("Players");
-                return Results.Ok(pokemons);
+                var players = await db.GetAllPlayers("Players");
+                return Results.Ok(players);
             });
 
             //GET PLAYER BY ID
             app.MapGet("/player/{id}", async (string id) =>
             {
-                var pokemon = await db.GetPlayerById("Players", id);
-                return Results.Ok(pokemon);
+                var player = await db.GetPlayerById("Players", id);
+                return Results.Ok(player);
             });
 
             //UPDATE PLAYER
